@@ -22,6 +22,7 @@ module.exports = {
 		// 	'error',
 		// 	'tab'
 		// ],
+		'react/prop-types': 'off',
 		'linebreak-style': [
 			'error',
 			'unix'
