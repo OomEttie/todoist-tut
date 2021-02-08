@@ -4,8 +4,7 @@ import { useTasks } from '../hooks/index'
 
 export const Tasks = () => {
   const { tasks } = useTasks('1')
-  console.log(tasks)
-  let projectName = ''
+  let projectName = 'HELLO'
 
   return (
     <div className="tasks" data-testid="tasks">
@@ -13,9 +12,8 @@ export const Tasks = () => {
       <ul className="tasks__list">
         {tasks.map((task) => (
           <li key={`${task.id}`}>
-            <Checkbox id={task.id}>
-              <span>{task.task}</span>
-            </Checkbox>
+            <Checkbox id={task.id}></Checkbox>
+            <span>{task.task}</span>
           </li>
         ))}
       </ul>
