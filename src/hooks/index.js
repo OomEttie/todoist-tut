@@ -57,7 +57,7 @@ export const useProjects = () => {
     firebase
       .firestore()
       .collection('projects')
-      .where('userid', '==', 'jlIFXIwyAL3tzHMtzRbw')
+      .where('userid', '==', 'xyz')
       .orderBy('projectid')
       .get()
       .then((snapshot) => {
@@ -70,7 +70,7 @@ export const useProjects = () => {
           setProjects(allProjects)
         }
       })
-  }, [projects])
+  }, [[...projects]])
 
   return { projects, setProjects }
 }
