@@ -12,11 +12,11 @@ export const Projects = ({ activeValue = null }) => {
     projects &&
     projects.map((project) => (
       <li
-        key={project.projectid}
+        key={project.projectId}
         data-testid="project-action-parent"
         data-doc-id={project.docId}
         className={
-          active === project.projectid
+          active === project.projectId
             ? 'active sidebar__project'
             : 'sidebar__project'
         }
@@ -27,13 +27,13 @@ export const Projects = ({ activeValue = null }) => {
           tabIndex={0}
           aria-label={`Select ${project.name} as the task project`}
           onClick={() => {
-            setActive(project.projectid)
-            setSelectedProject(project.projectid)
+            setActive(project.projectId)
+            setSelectedProject(project.projectId)
           }}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
-              setActive(project.projectid)
-              setSelectedProject(project.projectid)
+              setActive(project.projectId)
+              setSelectedProject(project.projectId)
             }
           }}
         >

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FaPizzaSlice } from 'react-icons/fa'
 import PropTypes from 'prop-types'
-// import { AddTask } from '../AddTask';
+import { AddTask } from '../AddTask'
 
 export const Header = ({ darkMode, setDarkMode }) => {
   const [shouldShowMain, setShouldShowMain] = useState(false)
@@ -42,12 +42,12 @@ export const Header = ({ darkMode, setDarkMode }) => {
         </div>
       </nav>
 
-      {/* <AddTask
+      <AddTask
         showAddTaskMain={false}
         shouldShowMain={shouldShowMain}
         showQuickAddTask={showQuickAddTask}
         setShowQuickAddTask={setShowQuickAddTask}
-      /> */}
+      />
     </header>
   )
 }

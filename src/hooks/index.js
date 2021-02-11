@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import { useState, useEffect } from 'react'
 import moment from 'moment'
 import { firebase } from '../firebase'
@@ -11,11 +12,11 @@ export const useTasks = (selectedProject) => {
     let unsubscribe = firebase
       .firestore()
       .collection('tasks')
-      .where('userid', '==', 'xyz')
+      .where('userId', '==', 'jlIFXIwyAL3tzHMtzRbw')
 
     unsubscribe =
       selectedProject && !collatedTasksExist(selectedProject)
-        ? (unsubscribe = unsubscribe.where('projectid', '==', selectedProject))
+        ? (unsubscribe = unsubscribe.where('projectId', '==', selectedProject))
         : selectedProject === 'TODAY'
         ? (unsubscribe = unsubscribe.where(
             'date',
@@ -57,8 +58,8 @@ export const useProjects = () => {
     firebase
       .firestore()
       .collection('projects')
-      .where('userid', '==', 'xyz')
-      .orderBy('projectid')
+      .where('userId', '==', 'jlIFXIwyAL3tzHMtzRbw')
+      .orderBy('projectId')
       .get()
       .then((snapshot) => {
         const allProjects = snapshot.docs.map((project) => ({
@@ -70,7 +71,7 @@ export const useProjects = () => {
           setProjects(allProjects)
         }
       })
-  }, [[...projects]])
+  }, [projects])
 
   return { projects, setProjects }
 }
