@@ -2,11 +2,19 @@ import React from 'react'
 import { Header } from './components/layout/Header'
 import { Content } from './components/layout/content'
 
-export const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <Header />
-      <Content />
-    </header>
-  </div>
-)
+import { ProjectsProvider, SelectedProjectProvider } from './context'
+
+export const App = () => {
+  return (
+    <SelectedProjectProvider>
+      <ProjectsProvider>
+        <div className="App">
+          <header className="App-header">
+            <Header />
+            <Content />
+          </header>
+        </div>
+      </ProjectsProvider>
+    </SelectedProjectProvider>
+  )
+}
